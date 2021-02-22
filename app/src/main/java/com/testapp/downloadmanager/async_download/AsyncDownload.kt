@@ -1,16 +1,12 @@
 package com.testapp.downloadmanager.async_download
 
 import android.os.AsyncTask
-import android.os.Environment
 import android.util.Log
 import java.io.BufferedInputStream
 import java.io.BufferedOutputStream
-import java.io.File
 import java.io.FileOutputStream
 import java.net.HttpURLConnection
 import java.net.URL
-import java.text.SimpleDateFormat
-import java.util.*
 
 class AsyncDownload(progress: (Int) -> Unit, success: (Boolean) -> Unit) : AsyncTask<String, Int, String>() {
     val progress1 = progress

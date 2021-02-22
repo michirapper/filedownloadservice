@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import com.testapp.downloadmanager.data_model.FileToDownload
 import com.testapp.downloadmanager.service.DownloadService
-import java.util.ArrayList
+import java.util.*
 
 class DownloadManager() {
     // file path is folder path
@@ -23,11 +23,7 @@ class DownloadManager() {
             fileToDownload.fileName = fileName
             fileToDownload.isDownloaded = false
             listOfFilesToBeDownloaded?.add(fileToDownload)
-            if (listOfFilesToBeDownloaded?.size!! > 1) {
-                isNotificationShowing = true
-            }else{
-                isNotificationShowing = false
-            }
+            isNotificationShowing = listOfFilesToBeDownloaded?.size!! > 1
             val intent = Intent(context, DownloadService::class.java)
             context.startService(intent)
         }

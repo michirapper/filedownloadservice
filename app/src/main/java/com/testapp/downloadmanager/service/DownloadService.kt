@@ -8,12 +8,10 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.IBinder
-import android.support.v4.app.NotificationCompat
-import com.testapp.downloadmanager.R
+import android.util.Log
+import androidx.core.app.NotificationCompat
 import com.testapp.downloadmanager.async_download.AsyncDownload
 import com.testapp.downloadmanager.manager.DownloadManager
-import kotlin.collections.ArrayList
-import android.util.Log
 
 
 class DownloadService : Service() {
